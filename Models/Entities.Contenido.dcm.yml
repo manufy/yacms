@@ -1,0 +1,11 @@
+# ORM.Mapping.Entities.Contenido.dcm.yml
+Entities\Contenido:
+  type: entity
+  table: Contenidos
+  fields:
+    id:
+       id:
+            type: integer
+            generator: { strategy: AUTO }
+    titulo:
+      length: 50

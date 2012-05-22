@@ -1,0 +1,37 @@
+{
+    "hash": "6d5e7d493a689d2c2fdceb77551b1318",
+    "packages": [
+        {
+            "package": "analog/analog",
+            "version": "dev-master",
+            "source-reference": "7969439a2e0eca333a75c124a17a11d8e188c7b5"
+        },
+        {
+            "package": "doctrine/common",
+            "version": "2.2.x-dev",
+            "source-reference": "1e0aa60d109c630d19543d999f12e2852ef8f932"
+        },
+        {
+            "package": "doctrine/dbal",
+            "version": "2.2.0-RC3"
+        },
+        {
+            "package": "doctrine/orm",
+            "version": "2.2.0-RC1"
+        },
+        {
+            "package": "symfony/console",
+            "version": "dev-master",
+            "source-reference": "8d58af16c425977018293eb0a1570c9629b37994"
+        },
+        {
+            "package": "symfony/yaml",
+            "version": "dev-master",
+            "source-reference": "48fcffece8de2ade6f6dbc909f22444356b7659f"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ]
+}

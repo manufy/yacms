@@ -1,0 +1,11 @@
+# ORM.Mapping.Entities.Rol.dcm.yml
+Entities\Rol:
+  type: entity
+  table: Roles
+  fields:
+    id:
+       id:
+            type: integer
+            generator: { strategy: AUTO }
+    name:
+      length: 50

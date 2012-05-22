@@ -1,0 +1,2 @@
+{$baseurl|widget_adminmenuvertical}
+

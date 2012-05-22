@@ -1,0 +1,1 @@
+{$baseurl|widget_getusuario}

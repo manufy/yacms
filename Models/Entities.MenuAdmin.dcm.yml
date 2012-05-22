@@ -1,0 +1,14 @@
+# ORM.Mapping.Entities.MenuAdmin.dcm.yml
+Entities\MenuAdmin:
+  type: entity
+  table: MenuAdmin
+  fields:
+    id:
+       id:
+            type: integer
+            generator: { strategy: AUTO }
+    titulo:
+      length: 50
+    template:
+      lenght: 20
+      

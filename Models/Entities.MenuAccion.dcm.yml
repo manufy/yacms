@@ -1,0 +1,12 @@
+# ORM.Mapping.Entities.MenuAccion.dcm.yml
+Entities\MenuAccion:
+  type: entity
+  table: MenuAcciones
+  fields:
+    id:
+       id:
+            type: integer
+            generator: { strategy: AUTO }
+    titulo:
+      length: 50
+   

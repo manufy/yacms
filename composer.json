@@ -1,0 +1,23 @@
+{
+	"name": "yacms/doctrine-skeleton",
+
+	"authors": [
+        		{
+            		"name": "Manuel Fernández Yáñez",
+           			"email": "manu@redgreenrefactor.blogsite.org",
+          			"homepage": "http://redgreenrefactor.blogsite.org"
+        		}
+    ],
+    "autoload": {
+        "psr-0": {"": ""}
+    },
+    "require": {
+        "doctrine/common": "2.2.*",
+        "doctrine/dbal": "2.2.*",
+        "doctrine/orm": "2.2.*",
+		"analog/analog": "*",
+		"symfony/console": "*",
+		"symfony/yaml": "*"
+       
+    }
+}
