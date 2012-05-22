@@ -10,3 +10,7 @@ Usage:
 2) Create the models in YAML (models directory)
 3) Execute createproject.bat to create BBDD from YAML definitions
 4) Execute updateproject.bat to update BBDD between versions
+
+GNU Licensed
+
+Demo at: http://tao.homeunix.net/yacms/
