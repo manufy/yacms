@@ -3,11 +3,11 @@ use IWeb\Core;
 
 function widget_adminmenuvertical($baseurl) {
 
-global $iweb;
+global $YaCMS;
 $output = "";
-$htmlhelper = new IWeb\Core\HTMLHelper();
+$htmlhelper = new YaCMS\Core\HTMLHelper();
 $dql = "SELECT a FROM \Entities\MenuAdmin a";
-$query = $iweb->entitymanager->createQuery($dql);
+$query = $YaCMS->entitymanager->createQuery($dql);
 $menu = $query->getResult();
 $output .= $htmlhelper->ul("menu");
 foreach ($menu as $item)
