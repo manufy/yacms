@@ -13,8 +13,10 @@ namespace YaCMS\Core {
 		}
 
 		public function dispatch($parent) {
-			//	echo "PRE:<pre>";
-			//		print_r($parent -> ouri);
+			echo "Dispatch<pre>";
+			print_r($_SESSION);
+				//echo "SERVER:<pre>";
+					//print_r($_SERVER);
 			//		echo '<br>';
 			// Procesa paginas tpl, index, '', admin y contenidos
 

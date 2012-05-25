@@ -4,16 +4,17 @@ namespace YaCMS\Core {
 
 	class LoginManager   {
 		
-		//private $YaCMS;
+		private $YaCMS;
 		
 		public function __construct($YaCMS)
 		{
-				//parent::__construct($YaCMS); //$this->YaCMS = $YaCMS;
+				//parent::__construct($YaCMS); 
+				$this->YaCMS = $YaCMS;
 		}
 		
 		public function IsLoggedIn() {
-			return false;
 			
+			echo "ISLOGGEDIN: " . $this->YaCMS->osessionmanager->get('usuario');
 			if ($this->YaCMS->osessionmanager->get('usuario')) 
 				return true;
 			return false;
@@ -22,14 +23,23 @@ namespace YaCMS\Core {
 		public function ValidateLogin($usuario,$clave) {
 			
 			
-			$dh = $this->YaCMS->getDoctrineHelper();
-			$usuario= $dh->getdqlquery("SELECT u FROM \Entities\Usuario u WHERE u.nombre='" . $usuario .  "'");
-			if (count($usuario)>1) {
+			$dql = ("SELECT u FROM \Entities\Usuario u WHERE u.nombre='" . $usuario .  "'");
+			echo "VAL:" . $dql . "<br>";
+			$query = $this->YaCMS -> entitymanager -> createQuery($dql);
+		
+			// ToDo: Usar query unico de doctrine
+			
+			$usuarios = $query -> getResult();
+			//echo "<pre>";
+			//print_r($query);			
+			
+			if (count($usuarios)>1) {
 				
-				$primerusuario = $usuario[0];
+				$primerusuario = $usuarios[0];
 				echo $primerusuario->getPassword();
 				if ($primerusuario->getPassword() == $clave){
-					return true;
+					echo "yepaaaa";
+										return true;
 				}			
 			}
 			return false;

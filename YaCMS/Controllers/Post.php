@@ -12,7 +12,7 @@ namespace YaCMS\Controllers {
 
 		public function draw() {
 
-			echo "postprocessor";
+			echo "postprocessordddddddddddd";
 
 			echo $this -> iweb -> ouri -> ParametrosArray[count($this -> iweb -> ouri -> ParametrosArray) - 1];
 			//$this->iweb->HTMLTemplateOutput("widgets/login/login",0);

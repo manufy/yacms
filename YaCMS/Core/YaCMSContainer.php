@@ -7,7 +7,8 @@ namespace YaCMS\Core {
 	include ('YaCMS/rain.tpl.class.php');
 	
 	class YaCMSContainer {
-				
+			
+		public $pathinfo;
 		public $templateEngine;
 		public $classloader;
 		public $entitymanager;
@@ -26,10 +27,11 @@ namespace YaCMS\Core {
 		public $baseurl;
 		public $basedir;
 			
-		public function __construct($baseurl,$basedir) {
+		public function __construct() {
 			\Analog::log('Main');
-			$this->baseurl = $baseurl;
-			$this->basedir = $basedir;
+			$this->baseurl  = "http://127.0.0.1/yacms/";
+			$this->pathinfo =  pathinfo($_SERVER['SCRIPT_FILENAME']);
+			$this->basedir = $this->pathinfo['dirname'];
 			$this->InitializeLogger();
 			$this->BootStrapDoctrine();
 			$this->InitializeDoctrine();

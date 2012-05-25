@@ -14,13 +14,13 @@ namespace YaCMS\Core {
 		public $osessionmanager;
 		public $ohtmlhelper;
 		
-		public function __construct($baseurl="", $basedir="") {
+		public function __construct() {
 		
 			spl_autoload_register();
 		
 			// Inicializar Doctrine y RainTPL
 		
-			parent::__construct($baseurl,$basedir);
+			parent::__construct();
 		
 			// Inicializar CMS
 		
@@ -58,11 +58,11 @@ namespace YaCMS\Core {
 			// Kludge, eliminamos el contenido de la cache para generacion dinamica
 			//	   array_map('unlink',glob('contenido/*'));//==@rmdir($path)
 			   
-			if( $cache = $this->templateEngine->cache($sTemplate, 60, $contenidoid) ) {
+	/*		if( $cache = $this->templateEngine->cache($sTemplate, 60, $contenidoid) ) {
 				echo $cache;
 				$this->obenchmark->echostats("CACHE");
 				return;
-			}
+			}*/
 			$this->templateEngine->assign( "iweb", $this); 
 			$this->templateEngine->assign( "baseurl", \RainTPL::$base_url ); 
 			$this->templateEngine->assign( "contenidoid", $contenidoid ); 
