@@ -7,7 +7,9 @@ function iweb_admingetcontenido($iweb=null, $contenidoid=null) {
 	  $templateengine = $iweb->TemplateEngineFactory("Views/");
 	  $admincontenidoid= substr($contenidoid, 0, strrpos($contenidoid, '.tpl'));
 
-	  if ($contenidoid == "admin.tpl"){
+
+		echo "conteniood: " . $contenidoid;
+	  if ($contenidoid == ""){
 	 	
 		echo "Admincontent.tpl";
 		return;

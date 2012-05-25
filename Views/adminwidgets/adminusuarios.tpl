@@ -44,7 +44,7 @@
 
 
 
-...
+... LISTA:
 <table id="list"></table> 
 <div id="gridpager"></div>
 

@@ -51,10 +51,10 @@ namespace YaCMS\Core {
 					$this -> nombreVista = $this -> explodedURIArray[count($this -> explodedURIArray) -1];
 				echo "NombreVista no index no blank: " . $this->nombreVista."<br>";
 			}	
-			if (($this -> nombreVista <> "contenidos")&& ($this -> nombreVista <> "admin")) {
+			if (($this -> nombreVista == "contenidos")|| ($this -> nombreVista == "admin")) {
 					
-					$this -> nombreVista = $this -> explodedURIArray[count($this -> explodedURIArray)]; 
-			echo "NombreVista contenidos " . $this->nombreVista."<br>";
+					//$this -> nombreVista = $this -> explodedURIArray[count($this -> explodedURIArray)]; 
+					echo "NombreVista parametros " . $this->nombreVista."<br>";
 
 					$this -> parametro = $this -> explodedURIArray[count($this -> explodedURIArray)];
 					
@@ -63,6 +63,39 @@ namespace YaCMS\Core {
 		
 			}
 
+			$url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; 
+			$iurl = parse_url($url);
+			echo "parseurl;<pre>";
+				print_r($iurl);
+
+			$miinfo = pathinfo($_SERVER['REQUEST_URI']);
+			echo "requesturiinfo<pre>";
+			print_r($miinfo);
+			$this -> nombreVista  = $miinfo['basename'];
+			
+			// Redirige dominio por defecto a index
+		   	if ($miinfo["dirname"] == "\\") {
+		   		$this -> nombreVista  = "";
+		   	}
+			
+			// Si es contenidos, reformatea como Controller/Action/Parameters
+			
+			
+			if ((basename($miinfo['dirname'])) == "contenidos")
+			{
+						$this -> nombreVista = $this -> explodedURIArray[count($this -> explodedURIArray) -1];
+			
+					$this -> parametro = $this -> explodedURIArray[count($this -> explodedURIArray)];				
+			}
+			
+			if ((basename($miinfo['dirname'])) == "admin")
+			{
+						$this -> nombreVista = $this -> explodedURIArray[count($this -> explodedURIArray) -1];
+			
+					$this -> parametro = $this -> explodedURIArray[count($this -> explodedURIArray)];				
+			}
+		 
+		   	
 			return $this -> ParametrosArray;
 
 		}
