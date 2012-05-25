@@ -13,8 +13,10 @@ namespace YaCMS\Core {
 		}
 
 		public function dispatch($parent) {
-			echo "Dispatch<pre>";
-			print_r($_SESSION);
+			echo "Dispatch ";
+			echo basename($parent->ouri->nombreVista);
+			echo ".tpl<pre>";
+				
 				//echo "SERVER:<pre>";
 					//print_r($_SERVER);
 			//		echo '<br>';

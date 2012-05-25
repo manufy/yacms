@@ -45,14 +45,16 @@ namespace YaCMS\Core {
 			// Si nombreVista no es "" o index.php hay que parsear el nombre de forma distinta
 			
 			
-
+			echo "NombreVistaInicial: " . $this->nombreVista . "<br>";
 			if (($this -> nombreVista <> "index.php") && ($this -> nombreVista <> "") ) {
 
-					
 					$this -> nombreVista = $this -> explodedURIArray[count($this -> explodedURIArray) -1];
+				echo "NombreVista no index no blank: " . $this->nombreVista."<br>";
+			}	
+			if (($this -> nombreVista <> "contenidos")&& ($this -> nombreVista <> "admin")) {
 					
-			if ($this -> nombreVista <> "contenidos")
-					$this -> nombreVista = $this -> explodedURIArray[count($this -> explodedURIArray)];
+					$this -> nombreVista = $this -> explodedURIArray[count($this -> explodedURIArray)]; 
+			echo "NombreVista contenidos " . $this->nombreVista."<br>";
 
 					$this -> parametro = $this -> explodedURIArray[count($this -> explodedURIArray)];
 					
