@@ -9,7 +9,7 @@ function widget_getusuario($baseurl) {
 	if ($YaCMS->ologinmanager->IsLoggedIn()) { //$iweb->osessionmanager->get('usuario')) {
 		
 		echo "Usuario: " . $YaCMS->osessionmanager->get('usuario');
-		echo $YaCMS->ohtmlhelper->a("logout","Salir");
+		echo $YaCMS->ohtmlhelper->a($baseurl ."logout","Salir");
 	}
 	else {
 		echo $YaCMS->ohtmlhelper->a($baseurl . "login.tpl","Enddrar");
