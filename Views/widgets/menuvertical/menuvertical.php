@@ -1,5 +1,5 @@
 <?php
-use IWeb\Core;
+use YaCMS\Core;
 use Doctrine\ORM\Query;
 
 function widget_menuvertical($baseurl) {

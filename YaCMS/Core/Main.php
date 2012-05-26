@@ -8,7 +8,7 @@ namespace YaCMS\Core {
 	class Main extends YaCMSContainer {				
 		
 		public $obenchmark;
-		public $ouri;
+	
 		public $odispatcher;
 		public $ologinmanager;
 		public $osessionmanager;
@@ -32,7 +32,7 @@ namespace YaCMS\Core {
 			$this->osessionmanager = new SessionManager();
 			$this->obenchmark = new Benchmark();	
 			$this->ologinmanager = new LoginManager($this);
-			$this->ouri = new Uri();	
+			
 			$this->odispatcher = new Dispatcher($this->ouri, $this);
 		
 
@@ -49,7 +49,7 @@ namespace YaCMS\Core {
 			$newraintpl::configure("tpl_dir", $tpl_dir );
 			$newraintpl::configure("cache_dir", "cache/" );
 			$newraintpl::configure("tpl_ext", "tpl" );
-			$newraintpl::configure("base_url", $this->baseurl );
+			$newraintpl::configure("base_url", $this->ouri->baseurl );
 			return $newraintpl;
 		}
 		

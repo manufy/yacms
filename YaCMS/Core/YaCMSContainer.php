@@ -8,7 +8,7 @@ namespace YaCMS\Core {
 	
 	class YaCMSContainer {
 			
-		public $pathinfo;
+		
 		public $templateEngine;
 		public $classloader;
 		public $entitymanager;
@@ -24,19 +24,20 @@ namespace YaCMS\Core {
 		public $doctrinedriverimplementation;
 		
 		public $ologger;
-		public $baseurl;
-		public $basedir;
+		
 			
 		public function __construct() {
 			\Analog::log('Main');
-			$this->baseurl  = "http://127.0.0.1/yacms/";
-			$this->pathinfo =  pathinfo($_SERVER['SCRIPT_FILENAME']);
-			$this->basedir = $this->pathinfo['dirname'];
+		$this->ouri = new URI();
+		//	echo "basedir:" . $this->ouri->basedir  . "<br>";
+			//echo "baseurl:" . $this->ouri->baseurl  . "<br>";
+			
 			$this->InitializeLogger();
 			$this->BootStrapDoctrine();
 			$this->InitializeDoctrine();
 			$this->InitializeRainTPL();		
-			$this->ouri = new URI();	
+				
+			
 			$this->odispatcher = new Dispatcher($this->ouri, $this);
 		
 		}
@@ -52,7 +53,7 @@ namespace YaCMS\Core {
 			\raintpl::configure("tpl_dir", "Views/" );
 			\raintpl::configure("cache_dir", "cache/" );
 			\raintpl::configure("tpl_ext", "tpl" );
-   			\raintpl::configure("base_url", $this->baseurl);
+   			\raintpl::configure("base_url", $this->ouri->baseurl);
 		}
 		
 		// Rutas

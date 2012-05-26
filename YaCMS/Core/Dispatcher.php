@@ -9,13 +9,13 @@ namespace YaCMS\Core {
 
 		public function __construct($ouri, $parent) {
 			$this -> ouri = $ouri;
-			$this -> iweb = $parent;
+			$this -> parent = $parent;
 		}
 
 		public function dispatch($parent) {
 			echo "Dispatch ";
-			echo basename($parent->ouri->nombreVista);
-			echo ".tpl<pre>";
+			echo basename($parent->ouri->nombreVista) . '<br>';
+			
 				
 				//echo "SERVER:<pre>";
 					//print_r($_SERVER);
@@ -28,6 +28,7 @@ namespace YaCMS\Core {
 					$controller -> draw();
 					break;
 				case '' :
+					//echo "Index Controller";
 					$controller = new \YaCMS\Controllers\Index($parent);
 					$controller -> draw();
 					break;
@@ -71,9 +72,16 @@ namespace YaCMS\Core {
 					break;
 			}
 
-			echo "PRE:<pre>";
+			echo "ouri:<pre>";
 			print_r($parent -> ouri);
 			echo '<br>';
+			echo "server:<pre>";
+			print_r($_SERVER);
+			echo '<br>';
+			echo "req:<pre>";
+			print_r($_REQUEST);
+			echo '<br>';
+			
 		}
 
 	}

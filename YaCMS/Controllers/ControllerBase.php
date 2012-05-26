@@ -4,7 +4,7 @@ namespace YaCMS\Controllers {
 
 	class ControllerBase {
 
-		private $iweb;
+		public $iweb;
 
 		public function __construct($iweb) {
 			$this -> $iweb = $iweb;

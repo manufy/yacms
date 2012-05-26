@@ -1,9 +1,11 @@
 <?php
 
-use IWeb\Core;
+use YaCMS\Core;
 use Doctrine\ORM\Query;
 
 function widget_getusuario($baseurl) {
+	echo "mapppach";
+	return;
 	global $YaCMS;
 	echo "baseurl:" . $baseurl;
 	if ($YaCMS->ologinmanager->IsLoggedIn()) { //$iweb->osessionmanager->get('usuario')) {
