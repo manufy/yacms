@@ -22,7 +22,7 @@ namespace YaCMS\Controllers {
 		}
 
 		public function draw() {
-			$this -> iweb -> HTMLTemplateOutput("default/main", $this -> iweb -> ouri -> parametro);
+			$this -> iweb -> HTMLTemplateOutput("default/main", $this -> iweb -> ouri -> parametros[1]);
 		}
 
 	}

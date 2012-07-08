@@ -12,13 +12,13 @@ $IsValidUser = $this->iweb->ologinmanager->ValidateLogin($usuario,$clave);
 if ($IsValidUser) {
 	echo "yujo sesion usuario establecida <br>";
 	$this->iweb->osessionmanager->set('usuario', $usuario);
-	echo $this->iweb->ohtmlhelper->a($this->iweb->baseurl .'index.php','Volver');	
+	echo $this->iweb->ohtmlhelper->a($this->iweb->ouri->baseurl  .'index.php','Volver');	
 	//header("location: index.php");
 	//echo "LOGGED IN";
 }
 else {
 	echo "NOT AUTH";
-	echo $this->iweb->ohtmlhelper->a($this->iweb->baseurl . 'index.php','Volver');	
+	echo $this->iweb->ohtmlhelper->a($this->iweb->ouri->baseurl . 'index.php','Volver');	
 }
 
 

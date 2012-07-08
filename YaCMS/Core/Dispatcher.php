@@ -13,8 +13,8 @@ namespace YaCMS\Core {
 		}
 
 		public function dispatch($parent) {
-			echo "Dispatch ";
-			echo basename($parent->ouri->nombreVista) . '<br>';
+			//echo "Dispatch ";
+			//echo basename($parent->ouri->nombreVista) . '<br>';
 			
 				
 				//echo "SERVER:<pre>";
@@ -36,7 +36,7 @@ namespace YaCMS\Core {
 				// Ahora se procesanW las acciones globales, admin y contenidos
 
 				case 'login' :
-					$parent -> HTMLTemplateOutput("default/login", $parent -> ouri -> ParametrosArray[count($parent -> ouri -> ParametrosArray) - 1]);
+					$parent -> HTMLTemplateOutput("default/login", 0);
 					break;
 
 				case 'logout' :
@@ -75,12 +75,12 @@ namespace YaCMS\Core {
 			echo "ouri:<pre>";
 			print_r($parent -> ouri);
 			echo '<br>';
-			echo "server:<pre>";
-			print_r($_SERVER);
-			echo '<br>';
-			echo "req:<pre>";
-			print_r($_REQUEST);
-			echo '<br>';
+		//	echo "server:<pre>";
+		//	print_r($_SERVER);
+		//	echo '<br>';
+		//	echo "req:<pre>";
+		//	print_r($_REQUEST);
+		//	echo '<br>';
 			
 		}
 

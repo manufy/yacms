@@ -15,7 +15,12 @@ namespace YaCMS\Controllers {
 		}
 
 		public function draw() {
-			$this -> iweb -> HTMLTemplateOutput("admin/main", $this -> iweb -> ouri -> parametro);
+			
+			$parametro = 0;
+			if (count($this -> iweb -> ouri -> parametros) > 1)
+				$parametro = $this -> iweb -> ouri -> parametros[1];
+			
+			$this -> iweb -> HTMLTemplateOutput("admin/main", $parametro);
 		}
 
 	}
